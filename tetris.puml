@@ -1,0 +1,111 @@
+@startuml
+class tetris.tests.TestBlock {
++ {static} void main(String[])
+}
+class tetris.tests.TestBoard {
++ {static} void main(String[])
+}
+class tetris.lib.pieces.PieceS {
++ <<Create>> PieceS()
+}
+class tetris.lib.pieces.PieceJ {
++ <<Create>> PieceJ()
+}
+class tetris.lib.blocks.Empty {
++ <<Create>> Empty()
++ Block getClone()
+}
+class tetris.lib.pieces.PieceZ {
++ <<Create>> PieceZ()
+}
+class tetris.lib.boards.Board {
+- Piece current
++ <<Create>> Board(Block[][],Piece)
++ <<Create>> Board(Board)
++ <<Create>> Board(int,int)
++ Piece getCurrent()
++ void setCurrent(Piece)
++ void generateRandomPiece()
++ void freezePiece()
++ boolean canMovePiece(int,int)
++ boolean canRotatePiece()
++ void moveLeft()
++ void moveRight()
++ void moveDown()
++ void rotatate()
++ void fallDown()
++ String toString()
+}
+class tetris.tests.TestEmpty {
++ {static} void main(String[])
+}
+class tetris.tests.TestPiece {
++ {static} void main(String[])
+}
+class tetris.lib.blocks.BlockMatrix {
+# Block[][] matrix
++ <<Create>> BlockMatrix(Block[][])
++ <<Create>> BlockMatrix()
++ <<Create>> BlockMatrix(BlockMatrix)
++ Block[][] getMatrix()
++ int getLines()
++ int getColumns()
++ void rotate()
++ String toString()
++ BlockMatrix getClone()
+}
+class tetris.lib.blocks.Block {
+- char txt
++ <<Create>> Block(char)
++ <<Create>> Block(Block)
++ void setTxt(char)
++ char getTxt()
++ String toString()
++ Block getClone()
+}
+class tetris.lib.pieces.Piece {
+- int x
+- int y
++ <<Create>> Piece(Block[][],int,int)
++ <<Create>> Piece(Piece)
++ int getX()
++ void setX(int)
++ int getY()
++ void setY(int)
++ Piece getClone()
++ void moveLeft()
++ void moveRight()
++ void moveDown()
++ String toString()
+}
+class tetris.tests.TestBlockMatrix {
++ {static} void main(String[])
+}
+class tetris.lib.pieces.PieceT {
++ <<Create>> PieceT()
+}
+class tetris.lib.pieces.PieceI {
++ <<Create>> PieceI()
+}
+class tetris.lib.pieces.PieceO {
++ <<Create>> PieceO()
+}
+class tetris.lib.pieces.PieceL {
++ <<Create>> PieceL()
+}
+class tetris.tests.TestPieces {
++ {static} void main(String[])
+}
+
+
+tetris.lib.pieces.Piece <|-- tetris.lib.pieces.PieceS
+tetris.lib.pieces.Piece <|-- tetris.lib.pieces.PieceJ
+tetris.lib.blocks.Block <|-- tetris.lib.blocks.Empty
+tetris.lib.pieces.Piece <|-- tetris.lib.pieces.PieceZ
+tetris.lib.blocks.BlockMatrix <|-- tetris.lib.boards.Board
+tetris.lib.blocks.BlockMatrix <|-- tetris.lib.pieces.Piece
+tetris.lib.pieces.Piece <|-- tetris.lib.pieces.PieceT
+tetris.lib.pieces.Piece <|-- tetris.lib.pieces.PieceI
+tetris.lib.pieces.Piece <|-- tetris.lib.pieces.PieceO
+tetris.lib.pieces.Piece <|-- tetris.lib.pieces.PieceL
+@enduml
