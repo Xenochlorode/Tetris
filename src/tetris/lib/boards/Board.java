@@ -75,9 +75,12 @@ public class Board extends BlockMatrix {
     }
     public boolean canRotatePiece() {
         Piece rotated = current.getClone();
-        rotated.rotate();
+        rotated.rotateMatrix();
         Block[][] blocks = rotated.getMatrix();
 
+        if (rotated.getX() + rotated.getColumns() > this.getColumns()) {
+            return false;
+        }
         for (int i = 0; i < blocks.length; i++) {
             for (int j = 0; j < blocks[0].length; j++) {
                 if (!(blocks[i][j] instanceof Empty)) {
@@ -111,9 +114,9 @@ public class Board extends BlockMatrix {
             current.moveDown();
         }
     }
-    public void rotatate() {
+    public void rotate() {
         if (canRotatePiece()) {
-            current.rotate();
+            current.rotateMatrix();
         }
     }
 

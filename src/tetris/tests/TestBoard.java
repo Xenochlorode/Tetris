@@ -21,7 +21,7 @@ public class TestBoard {
         b.generateRandomPiece();
         System.out.println("Random \n" + b);
         b.moveDown();
-        b.rotatate();
+        b.rotate();
         System.out.println("Rotate \n" + b);
     }
 }

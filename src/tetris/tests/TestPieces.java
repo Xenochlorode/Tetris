@@ -8,7 +8,7 @@ public class TestPieces {
         i.moveRight();
         System.out.println(i);
         Piece j = new PieceJ();
-        j.rotate();
+        j.rotateMatrix();
         j.moveDown();
         System.out.println(j);
         System.out.println(new PieceL());

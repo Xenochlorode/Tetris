@@ -21,7 +21,7 @@ public class TestBlockMatrix {
         System.out.println("N. Linhas: " + b1.getLines());
         System.out.println("N. colunas: " + b1.getColumns());
 
-        b2.rotate();
+        b2.rotateMatrix();
         System.out.println("Original b1\n" + b1);
         System.out.println("Rotate b2\n" + b2);
     }

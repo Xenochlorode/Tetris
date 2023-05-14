@@ -13,7 +13,7 @@ public class TestPiece {
         Piece p = new Piece(B, 1, 4);
         System.out.println("piece = " + p);
         p.moveRight();
-        p.rotate();
+        p.rotateMatrix();
         System.out.println("Right and rotate " + p);
     }
 }
